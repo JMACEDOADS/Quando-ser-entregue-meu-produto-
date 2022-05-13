@@ -1,0 +1,17 @@
+# Comprei meu produto e foi me passado o seguinte prazo:
+# Dia da semana em que foi realizado a compra + dias corridos pós venda
+# Quando será entregue?
+
+x = ['segunda', 'terça', 'quarta', 'quinta', 'sexta', 'sabado', 'domingo']
+diasSemana = str(input('Digite o dia da semana em que você realizou a compra: '))
+quantidadeDeDias = int(input('Qual o prazo em dias corridos passado pelo vendedor? '))
+if quantidadeDeDias == 0:
+    print(f'chega hoje!')
+else:
+    novaLista = x.index(diasSemana)
+    x1 = x[novaLista:len(x)] + x[0:novaLista]
+    entrega = x1[quantidadeDeDias]
+    if entrega == diasSemana:
+        print('Chega hoje')
+    else:
+        print(f'Seu produto será entregue {entrega}')
